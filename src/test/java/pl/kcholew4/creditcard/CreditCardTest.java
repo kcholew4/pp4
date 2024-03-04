@@ -23,4 +23,16 @@ public class CreditCardTest {
         // Assert
         assert BigDecimal.valueOf(1500).equals(card.getBalance());
     }
+
+    @Test
+    void itDeniesCreditBelowThreshold() {
+        var card = new CreditCard();
+
+        try {
+            card.assignCredit(BigDecimal.valueOf(50));
+            assert false;
+        } catch (CreditBelowThresholdException e) {
+            assert true;
+        }
+    }
 }
