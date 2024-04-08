@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class HashMapProductStorage implements ProductStorage {
-    private final HashMap<Object, Object> products;
+    private final HashMap<String, Product> products;
 
     public HashMapProductStorage() {
         products = new HashMap<>();
@@ -12,7 +12,7 @@ public class HashMapProductStorage implements ProductStorage {
 
     @Override
     public List<Product> allProducts() {
-        return null;
+        return products.values().stream().toList();
     }
 
     @Override
@@ -22,6 +22,6 @@ public class HashMapProductStorage implements ProductStorage {
 
     @Override
     public Product getProductBy(String id) {
-        return null;
+        return products.get(id);
     }
 }

@@ -10,8 +10,8 @@ public class ProductCatalog {
 
     ProductStorage productStorage;
 
-    public ProductCatalog() {
-        productStorage = new ArrayListProductStorage();
+    public ProductCatalog(ProductStorage productStorage) {
+        this.productStorage = productStorage;
     }
 
     public List<Product> allProducts() {
